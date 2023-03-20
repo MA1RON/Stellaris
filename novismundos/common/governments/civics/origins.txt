@@ -1,0 +1,46 @@
+# Infinite Darkness
+origin_infinite_darkness = {
+	# TO DO:
+	# put some more text in the description in the start screen
+	
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_infinite_darkness.dds"
+	picture = GFX_origin_infinitedarkness
+
+	starting_colony = pc_arctic
+	habitability_preference = pc_arctic
+	initializers = { infdar_system_initializer }
+
+	potential = {
+		always = yes
+	}
+
+	possible = {
+		ethics = { NOT = { value = ethic_gestalt_consciousness } }
+		civics = {
+			NOR = {
+				text = civic_tooltip_not_idyllic_bloom
+				value = civic_idyllic_bloom
+				value = civic_hive_idyllic_bloom
+			}
+			NOT = { value = civic_agrarian_idyll }
+			NOR = {
+				text = civic_tooltip_not_anglers
+				value = civic_anglers
+				value = civic_corporate_anglers
+			}
+		}
+	}
+
+	random_weight = {
+		base = 3
+	}
+
+	traits = {
+		trait = trait_pc_everywhere_preference
+	}
+
+	description = "origin_tooltip_infdar_effects" # to show the effects
+
+	advanced_start = yes
+}

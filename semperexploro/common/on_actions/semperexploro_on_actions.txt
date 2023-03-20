@@ -1,0 +1,6 @@
+on_game_start_country = {
+	events = {
+		semperexploro.1
+		semperexploro.2
+	}
+}

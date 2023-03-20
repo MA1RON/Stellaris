@@ -1,0 +1,57 @@
+# ##################
+# Terraformation
+# ##################
+
+# terraforming pc_ice_asteroid to pc_arctic and pc_ocean
+tech_paraterraforming = {
+	cost = @tier4cost1 # time to reaserch it
+	area = society
+	tier = 4
+	category = { new_worlds }
+	prerequisites = { "tech_terrestrial_sculpting" }
+	weight = @tier4weight1 # how likely is this tech to appear
+
+	weight_modifier = {
+		modifier = {
+			factor = 1.25
+			has_tradition = tr_expansion_adopt
+		}
+		modifier = {
+			factor = value:tech_weight_likelihood
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_new_worlds"
+			}
+		}
+	}
+
+	prereqfor_desc = {
+		diplo_action = {
+			title = "tech_paraterraforming_change_title"
+			desc = "tech_paraterraforming_change_desc"
+		}
+	}
+
+	ai_weight = {
+		factor = @terraforming_tech_ai_factor
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_new_worlds"
+			}
+		}
+		modifier = {
+			factor = 5
+			has_origin = origin_life_seeded
+		}
+		modifier = {
+			factor = 4
+			any_system_within_border = {
+				any_system_planet = {
+					is_planet_class = pc_ice_asteroid
+				}
+			}
+		}
+	}
+}

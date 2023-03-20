@@ -1,0 +1,50 @@
+# Infinite Darkness
+trait_pc_everywhere_preference = {
+	icon = "gfx/interface/icons/traits/trait_perfect_tolerance.dds"
+	initial = no
+	species_potential_add = {
+		exists = from
+		from = {
+			AND = {
+				has_origin = origin_infinite_darkness
+				has_tradition = tr_genetics_resequencing
+			}
+		}
+	}
+	species_possible_remove = {
+		can_remove_beneficial_genetic_traits = yes
+	}
+	randomized = no
+	species_possible_merge_add = {
+		always = yes
+	}
+	allowed_archetypes = { BIOLOGICAL PRESAPIENT LITHOID }
+	potential_crossbreeding_chance = 0.01
+	modifier = {
+		pop_environment_tolerance = 1
+	}
+	ai_weight = {
+		weight = 0
+	}
+	slave_cost = {
+		energy = 1000
+	}
+}
+
+# Cannibalism
+trait_pc_cannibalism = {
+	cost = 0
+	icon = "gfx/interface/icons/traits/trait_cannibalism.dds"
+	species_possible_merge_add = {
+		always = yes
+	}
+	allowed_archetypes = { BIOLOGICAL }
+	sorting_priority = 20
+	modifier = {
+		pop_growth_speed = -0.5
+		planet_jobs_food_produces_mult = 0.75
+	}
+	ai_weight = {
+		weight = 1
+	}
+}

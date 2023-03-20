@@ -1,0 +1,12 @@
+sc_lost = {
+	class			= pc_black_hole # to check if it works
+	icon_scale		= 1.0
+	planet			= { key = pc_black_hole }
+	spawn_odds		= 0.1
+
+	is_environmental_hazard = no
+	modifier = {
+		ship_disengage_chance_reduction = 1.5
+		ship_emergency_ftl_min_days_mult = 0.5
+	}
+}

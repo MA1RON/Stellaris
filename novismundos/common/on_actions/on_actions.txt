@@ -1,0 +1,10 @@
+on_game_start_country = {
+	events = {
+		sempervigilate.1
+		sempervigilate.2
+		semperaedificatio.1
+		semperaedificatio.2
+		semperadeductionem.1
+		semperadeductionem.2
+	}
+}

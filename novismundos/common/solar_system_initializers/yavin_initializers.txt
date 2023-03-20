@@ -1,0 +1,389 @@
+@base_moon_distance = 5
+@jumps = 2
+
+
+### Yavin System
+yavin_system_initializer = {
+	name = "NAME_Yavin" # name of the system
+	class = "sc_k"
+	flags = { empire_home_system }
+	usage = custom_empire # most likely it pops up even if not selected at the start
+
+	init_effect = {
+		every_neighbor_system = {
+			set_star_flag = empire_cluster
+			every_neighbor_system = {
+				set_star_flag = empire_cluster
+			}
+		}
+		generate_home_system_resources = yes
+	}
+
+	planet = {
+		name = "NAME_Yavin" # name of the star
+		class = "pc_k_star" # class = star creates a random star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 30
+		has_ring = no
+	}
+
+	planet = {
+		name = "NAME_Fiddani"
+		class = "pc_barren"
+		orbit_distance = 20
+		orbit_angle = 330
+		size = 19
+		has_ring = no
+		init_effect = {
+			add_deposit = d_minerals_7
+		}
+	}
+
+	planet = {
+		name = "NAME_Stroiketcy"
+		class = "pc_ice_asteroid"
+		orbit_distance = 65
+		orbit_angle = 75
+		size = { min = 5 max = 10 }
+		has_ring = no
+		init_effect = {
+			add_modifier = {
+				modifier = "terraforming_candidate"
+				days = -1
+			}
+			add_deposit = d_society_9
+		}
+	}
+
+	planet = {
+		name = "NAME_Yavin_Prime"
+		class = "pc_gas_giant"
+		orbit_distance = 10
+		orbit_angle = 140
+		size = 25
+		has_ring = yes
+		
+		moon = {
+			name = "NAME_Yavin_I"
+			class = "pc_molten"
+			orbit_distance = 10
+			orbit_angle = -210
+			size = 3
+			has_ring = no
+		}
+		moon = {
+			name = "NAME_Yavin_II"
+			class = "pc_molten"
+			orbit_distance = @base_moon_distance
+			orbit_angle = -40
+			size = 2
+			has_ring = no
+		}
+		moon = {
+			name = "NAME_Yavin_III"
+			class = "pc_molten"
+			orbit_distance = @base_moon_distance
+			orbit_angle = 40
+			size = 5
+			has_ring = no
+		}
+		moon = {
+			name = "NAME_Yavin_IV"
+			class = "pc_tropical"
+			orbit_distance = 7
+			orbit_angle = 0
+			size = 15
+			starting_planet = yes
+			has_ring = no
+
+			modifiers = none
+			init_effect = {
+				prevent_anomaly = yes
+			}
+		}
+		moon = {
+			name = "NAME_Yavin_VII"
+			class = "pc_molten"
+			orbit_distance = @base_moon_distance
+			orbit_angle = -40
+			size = 3
+			has_ring = no
+		}
+		moon = {
+			name = "NAME_Yavin_VIII"
+			class = "pc_continental"
+			orbit_distance = @base_moon_distance
+			orbit_angle = 30
+			size = 14
+			has_ring = no
+
+			init_effect = {
+				generate_primitives_on_planet = yes
+			}
+		}
+		moon = {
+			name = "NAME_Yavin_XIII"
+			class = "pc_desert"
+			orbit_distance = @base_moon_distance
+			orbit_angle = -80
+			size = 14
+			has_ring = no
+
+			init_effect = {
+				generate_primitives_on_planet = yes
+			}
+		}
+		moon = {
+			name = "NAME_Yavin_XXII"
+			class = "pc_asteroid"
+			orbit_distance = @base_moon_distance
+			orbit_angle = 10
+			size = 2
+			has_ring = no
+		}
+	}
+
+	neighbor_system = {
+		hyperlane_jumps = { min = 1 max = @jumps }
+		initializer = "torque_system_initializer"
+	}
+	neighbor_system = {
+		hyperlane_jumps = { min = 1 max = @jumps }
+		initializer = "vaal_system_initializer"
+	}
+	neighbor_system = {
+		hyperlane_jumps = { min = 1 max = @jumps }
+		initializer = "ladarra_system_initializer"
+	}
+	neighbor_system = {
+		hyperlane_jumps = { min = 1 max = @jumps }
+		initializer = "krylon_system_initializer"
+	}
+}
+
+### Torque System - one habitable planet
+torque_system_initializer  = {
+    name = "NAME_Torque" # name of the system
+
+    class = "sc_g"
+
+    init_effect = {
+        every_neighbor_system = { set_star_flag = empire_cluster }
+    }
+
+    planet = {
+        name = "NAME_Torque" # name of the star
+        class = "pc_g_star"
+        orbit_distance = 0
+        orbit_angle = 30
+        size = { min = 20 max = 30 }
+        has_ring = no
+    }
+
+    planet = {
+        count = { min = 0 max = 2 }
+        class = "rl_unhabitable_planets"
+        orbit_distance = { min = 20 max = 30 }
+        orbit_angle = { min = 0 max = 360 } # maybe if I don't write it at all it's already random
+        size = { min = 5 max = 20 }
+    }
+
+    planet = {
+        name = "NAME_Torque" # name of the habitable planet
+        class = "rl_habitable_normal"
+        orbit_distance = { min = 20 max = 30 }
+        orbit_angle = { min = 0 max = 360 } # maybe if I don't write it at all it's already random
+        size = { min = 5 max = 20 }
+    }
+
+    planet = {
+        count = { min = 0 max = 2 }
+        class = "rl_unhabitable_planets"
+        orbit_distance = { min = 20 max = 30 }
+        orbit_angle = { min = 0 max = 360 } # maybe if I don't write it at all it's already random
+        size = { min = 5 max = 20 }
+    }
+
+	neighbor_system = {
+		hyperlane_jumps = { min = 1 max = @jumps }
+		initializer = "jovan_system_initializer"
+	}
+}
+
+### Vaal System - one habitable planet
+vaal_system_initializer  = {
+    name = "NAME_Vaal" # name of the system
+
+    class = "sc_g"
+	asteroid_belt = {
+		type = rocky_asteroid_belt
+		radius = 70
+	}
+
+    init_effect = {
+        every_neighbor_system = { set_star_flag = empire_cluster }
+    }
+
+    planet = {
+        name = "NAME_Vaal" # name of the star
+        class = "pc_g_star"
+        orbit_distance = 0
+        orbit_angle = 130
+        size = { min = 20 max = 30 }
+        has_ring = no
+    }
+
+    planet = {
+		name = "NAME_Vaal" # name of the planet
+        class = "pc_continental"
+        orbit_distance = 40
+        orbit_angle = { min = 0 max = 360 } # maybe if I don't write it at all it's already random
+        size = { min = 5 max = 20 }
+
+		moon = {
+			name = "NAME_Vaal_moon"
+			class = "pc_barren_cold"
+			orbit_distance = @base_moon_distance
+			orbit_angle = { min = 0 max = 360 } # maybe if I don't write it at all it's already random
+			size = 3
+			has_ring = no
+		}
+    }
+
+	planet = {
+		name = "NAME_Rukabi_Major" # name of the planet
+        class = "pc_asteroid"
+        orbit_distance = 30
+        orbit_angle = { min = 0 max = 360 } # maybe if I don't write it at all it's already random
+        size = { min = 1 max = 5 }
+	}
+}
+
+### Ladarra System - one habitable planet
+ladarra_system_initializer  = {
+    name = "NAME_Ladarra" # name of the system
+
+    class = "sc_b"
+
+    init_effect = {
+        every_neighbor_system = { set_star_flag = empire_cluster }
+    }
+
+    planet = {
+        name = "NAME_Ladarra" # name of the star
+        class = "pc_b_star"
+        orbit_distance = 0
+        orbit_angle = 130
+        size = { min = 20 max = 30 }
+        has_ring = no
+    }
+
+	planet = {
+        count = { min = 0 max = 2 }
+        class = "rl_unhabitable_planets"
+        orbit_distance = { min = 5 max = 30 }
+        orbit_angle = { min = 0 max = 360 }
+        size = { min = 5 max = 20 }
+    }
+
+    planet = {
+		name = "NAME_Ladarra" # name of the planet
+        class = "pc_desert"
+        orbit_distance = 40
+        orbit_angle = { min = 0 max = 360 } # maybe if I don't write it at all it's already random
+        size = { min = 5 max = 20 }
+    }
+
+	planet = {
+        count = { min = 0 max = 2 }
+        class = "rl_unhabitable_planets"
+        orbit_distance = { min = 5 max = 30 }
+        orbit_angle = { min = 0 max = 360 }
+        size = { min = 5 max = 20 }
+    }
+}
+
+### Krylon System - one habitable planet
+krylon_system_initializer  = {
+    name = "NAME_Krylon" # name of the system
+
+    class = "sc_f"
+
+    init_effect = {
+        every_neighbor_system = { set_star_flag = empire_cluster }
+    }
+
+    planet = {
+        name = "NAME_Krylon" # name of the star
+        class = "pc_f_star"
+        orbit_distance = 0
+        orbit_angle = -130
+        size = { min = 20 max = 30 }
+        has_ring = no
+    }
+
+	planet = {
+        count = { min = 0 max = 2 }
+        class = "rl_unhabitable_planets"
+        orbit_distance = { min = 5 max = 30 }
+        orbit_angle = { min = 0 max = 360 }
+        size = { min = 5 max = 20 }
+    }
+
+    planet = {
+		name = "NAME_Krylon" # name of the planet
+        class = "rl_habitable_normal"
+        orbit_distance = 40
+        orbit_angle = { min = 0 max = 360 } # maybe if I don't write it at all it's already random
+        size = { min = 5 max = 20 }
+    }
+
+	planet = {
+        count = { min = 0 max = 2 }
+        class = "rl_unhabitable_planets"
+        orbit_distance = { min = 5 max = 30 }
+        orbit_angle = { min = 0 max = 360 }
+        size = { min = 5 max = 20 }
+    }
+}
+
+### Jovan System - three habitable planets
+jovan_system_initializer  = {
+    name = "NAME_Jovan" # name of the system
+
+    class = "sc_b"
+
+    planet = {
+        name = "NAME_Jovan" # name of the star
+        class = "pc_b_star"
+        orbit_distance = 0
+        orbit_angle = 30
+        size = { min = 20 max = 30 }
+        has_ring = no
+    }
+
+    planet = {
+        count = { min = 0 max = 2 }
+        class = "rl_unhabitable_planets"
+        orbit_distance = { min = 5 max = 30 }
+        orbit_angle = { min = 0 max = 360 }
+        size = { min = 5 max = 20 }
+    }
+
+    planet = {
+        count = 3
+        class = "rl_habitable_normal"
+        orbit_distance = { min = 20 max = 30 }
+        orbit_angle = { min = 0 max = 360 }
+        size = { min = 5 max = 20 }
+    }
+
+    planet = {
+        count = { min = 0 max = 2 }
+        class = "rl_unhabitable_planets"
+        orbit_distance = { min = 5 max = 30 }
+        orbit_angle = { min = 0 max = 360 }
+        size = { min = 5 max = 20 }
+    }
+}

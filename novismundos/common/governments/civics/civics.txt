@@ -1,0 +1,99 @@
+# Semper Vigilate
+sempervigilate_civic = {
+	potential = {
+		ethics = {
+			NOT = {
+				value = ethic_gestalt_consciousness
+			}
+		}
+	}
+	possible = {
+		authority = {
+			NOT = {value = auth_corporate}
+		}
+		ethics = {
+			OR = {
+				text = civic_tooltip_materialist
+				value = ethic_materialist
+				value = ethic_fanatic_materialist
+			}
+			OR = {
+				text = civic_tooltip_militarist
+				value = ethic_militarist
+				value = ethic_fanatic_militarist
+			}
+			NOR = {
+				text = civic_tooltip_not_xenophile
+				value = ethic_xenophile
+				value = ethic_fanatic_xenophile
+			}
+		}
+	}
+	random_weight = {
+		base = 5
+	}
+	description = "sempervigilate_civic_effects"
+	modifier = {
+		shipclass_military_build_cost_mult = -0.25
+	}
+}
+
+# Semper Aedificatio
+semperaedificatio_civic = {
+	potential = {
+		ethics = {
+			NOT = {
+				value = ethic_gestalt_consciousness
+			}
+		}
+	}
+	possible = {
+		authority = {
+			NOT = {value = auth_corporate}
+		}
+		ethics = {
+			OR = {
+				text = civic_tooltip_materialist
+				value = ethic_materialist
+				value = ethic_fanatic_materialist
+			}
+		}
+	}
+	random_weight = {
+		base = 5
+	}
+	description = "semperaedificatio_civic_effects"
+	modifier = {
+		shipclass_constructor_build_cost_mult = -0.25
+	}
+}
+
+# Semper Deductionem
+semperadeductionem_civic = {
+	potential = {
+		ethics = {
+			NOT = {
+				value = ethic_gestalt_consciousness
+			}
+		}
+	}
+	possible = {
+		authority = {
+			NOT = {value = auth_corporate}
+		}
+		ethics = {
+			OR = {
+				text = civic_tooltip_materialist
+				value = ethic_materialist
+				value = ethic_fanatic_materialist
+			}
+		}
+	}
+	random_weight = {
+		base = 5
+	}
+	description = "semperadeductionem_civic_effects"
+	modifier = {
+		shipclass_colonizer_build_cost_mult = -0.25
+	}
+}

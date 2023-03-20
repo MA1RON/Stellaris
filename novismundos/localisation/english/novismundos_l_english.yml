@@ -1,0 +1,94 @@
+﻿l_english:
+  ####################
+  # New Initializers #
+  ####################
+
+  ### Yavin System
+  yavin_system_initializer_NAME:0 "Yavin System"
+  yavin_system_initializer_DESC:0 "The Yavin System from Star Wars. Beware, in the Star Wars universe there are A LOT of inhabitable planets, this might be too easy for you."
+  NAME_Yavin:0 "Yavin"
+  NAME_Fiddani:0 "Fiddani"
+  NAME_Stroiketcy:0 "Stroiketcy"
+  NAME_Yavin_Prime:0 "Yavin Prime"
+  NAME_Yavin_I:0 "Yavin I"
+  NAME_Yavin_II:0 "Yavin II"
+  NAME_Yavin_III:0 "Yavin III"
+  NAME_Yavin_IV:0 "Yavin IV"
+  NAME_Yavin_VII:0 "Yavin VII"
+  NAME_Yavin_VIII:0 "Yavin VIII"
+  NAME_Yavin_XIII:0 "Yavin XIII"
+  NAME_Yavin_XXII:0 "Yavin XXII"
+  # Torque System
+  NAME_Torque:0 "Torque"
+  # Jovan System
+  NAME_Jovan:0 "Jovan"
+  # Vaal System
+  NAME_Vaal:0 "Vaal"
+  NAME_Vaal_moon:0 "Vaal's moon"
+  NAME_Rukabi_Major:0 "Rukabi Major"
+  # Ladarra System
+  NAME_Ladarra:0 "Ladarra"
+  # Krylon System
+  NAME_Krylon:0 "Krylon"
+
+  ### Infinite Darkness System
+  infdar_system_initializer_NAME:0 "Infinite Darkness"
+  infdar_system_initializer_DESC:0 "A black hole start, for those who are not afraid of the dark."
+
+  #####################
+  #  New Systems      #
+  #####################  
+
+  sc_lost:0 "Lost planet system"
+  sc_lost_desc:0 "System with a black hole and a lost wandering planet."
+
+  #####################
+  #  New Technologies #
+  #####################
+
+  # Paraterraforming
+  tech_paraterraforming:0 "Paraterraforming"
+  tech_paraterraforming_desc:0 "By applying drastic changes to icy asteroids it is now possible to make them habitable, even if the resulting choices are limited."
+  tech_paraterraforming_change_title:0 "§HUnlocks Feature:§! Paraterraforming"
+  tech_paraterraforming_change_desc:0 "§HParaterraforming§!\nAllows us to terraform icy asteroids."
+
+  #####################
+  #  New Origins      #
+  #####################
+
+  # Infinite Darkness
+  origin_infinite_darkness:0 "Infinite Darkness"
+  origin_infinite_darkness_desc:0 "Once a Rouge Planet, your homeworld has finally found it's stable home... It is a Black Hole!"
+  origin_tooltip_infdar_effects:0 "- Start in a black hole system\n- Get the trait §HPerfect Tolerance§!"
+  START_SCREEN_INFINITE_DARKNESS:0 "For reasons behind our understanding, [Root.GetHomeWorldName] left its original system a long time ago, becoming a Rogue Planet. For millenia your species never saw the light of a sun and the population slowly adapted to the icy wastes of its home.\nFew centuries ago the voyage of the [Root.GetSpeciesNamePlural] come to its end, entering into the orbit of a Black Hole, will you ever call a star your home again?"
+
+  #####################
+  #  New Traits      #
+  #####################  
+
+  # Perfect tolerance
+  trait_pc_everywhere_preference:0 "Perfect Tolerance"
+  trait_pc_everywhere_preference_desc:0 "Members of this species can live wherever they want."
+  # Cannibalism
+  trait_pc_cannibalism:0 "Cannibalism"
+  trait_pc_cannibalism_desc:0 "Your population enjoys to eat each other."
+  
+  #####################
+  #  New Traits      #
+  #####################
+
+  # Semper Vigilate
+  sempervigilate_civic: "Semper Vigilate"
+	sempervigilate_civic_desc: "This society prioritised military expansion over scientific exploration in the early space age."
+	sempervigilate_civic_effects: "Start with a Military Fleet instead of a Scientific Ship."
+  mod_shipclass_military_build_cost_mult:0 "Military Ships Build Cost"
+  # Semper Aedificatio
+  semperaedificatio_civic: "Semper Aedificatio"
+	semperaedificatio_civic_desc: "This society prioritised construction progress over military expansion in the early space age."
+	semperaedificatio_civic_effects: "Start with a Construction Ship instead of $OUTLINER_FLEETS$."
+  mod_shipclass_constructor_build_cost_mult:0 "Construction Ship Build Cost"
+  # Semper Deductionem
+  semperadeductionem_civic: "Semper Deductionem"
+	semperadeductionem_civic_desc: "This society prioritised colonization know-how over military expansion in the early space age."
+	semperadeductionem_civic_effects: "Start with a Colony Ship instead of $OUTLINER_FLEETS$."
+  mod_shipclass_colonizer_build_cost_mult:0 "Colony Ship Build Cost"

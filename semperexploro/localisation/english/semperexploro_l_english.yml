@@ -1,0 +1,4 @@
+﻿l_english:
+	semperexploro_civic: "Semper Exploro"
+	semperexploro_civic_desc: "This society prioritised scientific exploration over military expansion in the early space age."
+	semperexploro_civic_effects: "Start with a scientific ship and assigned scientist instead of $OUTLINER_FLEETS$."
